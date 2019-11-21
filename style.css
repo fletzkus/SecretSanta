@@ -1,0 +1,132 @@
+#win {
+  font-size: 3em;
+}
+
+
+body {
+  background-color: hsla(0, 20%, 95%, 1);
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Heebo', sans-serif;
+  font-weight: lighter;
+  letter-spacing: 0.04em;
+}
+
+
+#container {
+  width: 58%;
+  height: 580px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+
+  background-color: hsla(0, 0%, 98%, 0.9);
+  border: solid 20px white;
+  border-radius: 7%;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  margin: 0px;
+  margin-top: 15px;
+}
+
+#scroll-box {
+  overflow-y: scroll;
+  height: 65%;
+  width: 80%;
+  margin: auto;
+}
+
+#container .todo {
+  font-size: 20px;
+  padding: 1.5% 1.5% 2% 1.5%;
+
+  background-color: white;
+  border: solid 3px hsla(0, 0%, 100%, 1.0);
+  border-radius: 10px;
+  margin: 2% 10%;
+}
+
+#new-todo {
+  width: 80%;
+  margin: auto;
+}
+#new-todo-form {
+  margin: 3% 10%;
+  padding: 2%;
+  border: solid 5px hsla(0, 0%, 100%, 1.0);
+  border-radius: 10px;
+}
+#container #new-todo #newTitle {
+  width: 85%;
+  font-size: 20px;
+  border: none;
+  background-color: inherit;
+}
+/* so form input doesn't glow with outline around it */
+#container #new-todo #newTitle:focus {
+  outline: none;
+}
+
+@media (max-width: 800px) {
+  #container {
+    width: 80%;
+  }
+  .stripes {
+    margin-top: 20%;
+  }
+}
+
+button {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: solid 2px hsl(0, 0%, 90%);
+  border-radius: 50%;
+  background-color: white;
+  color: hsl(0, 0%, 80%);
+  font-size: 15px;
+  text-align: center;
+  padding-top: 2px;
+}
+#container .todo .check {
+  width: 36px;
+  height: 35px;
+  float: left;
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+}
+#container .todo .delete {
+  margin-top: 2px;
+  float: right;
+}
+#container #new-todo #new-submit {
+  float: right;
+  background-color: inherit;
+  /* position: relative; */
+  /* top: 5px; */
+}
+
+.todo p {
+  padding-top: 3px;
+  padding-left: 3px;
+}
+button, .todo p {
+  display: inline-block;
+  margin: 0px;
+  max-width: 80%;
+}
+
+
+.completed p {
+  text-decoration: line-through;
+  color: hsl(0, 0%, 50%);
+}
+.completed .check{
+  background-color: hsl(0, 0%, 50%);
+  border-color: hsl(0, 0%, 50%);
+}

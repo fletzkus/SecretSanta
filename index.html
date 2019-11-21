@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:300,500" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body>
+
+    <section id="container">
+      <h1>ToDo</h1>
+      <div id="scroll-box">
+        <!-- example todo html -->
+        <!-- <article class="todo">
+          <button class="check"></button>
+          <p>test</p>
+          <button class="delete">-</button>
+        </article> -->
+      </div>
+      <aside id="new-todo">
+        <form id="new-todo-form">
+          <input id="newTitle" type="text" placeholder="New ToDo...">
+          <button id="new-submit"><i class="fas fa-plus"></i></button>
+        </form>
+      </aside>
+    </section>
+
+    <div id="win" onclick="updateWin()">
+      WIN!
+    </div>
+
+  <!-- <script src="scripts.js"></script> -->
+    <script src="trial.js"></script>
+
+  </body>
+</html>
