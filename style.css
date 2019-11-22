@@ -1,132 +1,209 @@
-#win {
-  font-size: 3em;
+:root {
+  --dark-blue: #5997C9;
+  --light-blue: #BDD5E9;
+  --red: #E34424;
+  --green: #65C56C;
+  --round-corner: 5px;
 }
-
 
 body {
-  background-color: hsla(0, 20%, 95%, 1);
+  background-color: var(--light-blue);
   width: 100%;
-  box-sizing: border-box;
-  font-family: 'Heebo', sans-serif;
+  text-align: center;
+  /* box-sizing: border-box; */
+  /* font-family: 'Heebo', sans-serif;
   font-weight: lighter;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.04em; */
 }
 
-
-#container {
-  width: 58%;
-  height: 580px;
-
-  margin-left: auto;
-  margin-right: auto;
+#Secret-Santa {
   margin-top: 40px;
+  width: 680px;
+}
 
-  background-color: hsla(0, 0%, 98%, 0.9);
-  border: solid 20px white;
-  border-radius: 7%;
+#header {
+  background-color: var(--dark-blue);
+  color: white;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 250px;
+  width: 100%;
 }
 
 h1 {
   font-size: 50px;
-  text-align: center;
-  margin: 0px;
-  margin-top: 15px;
+  /* margin: 0px;
+  margin-top: 15px; */
 }
 
-#scroll-box {
-  overflow-y: scroll;
-  height: 65%;
-  width: 80%;
+#container {
+  background-color: var(--light-blue);
+  position: absolute;
+  top: 300px;
+  left: 0px;
+
+  /* width: 58%;
+  height: 580px; */
+  width: 100%;
+/*
+  margin-left: auto;
+  margin-right: auto; */
+  /* margin-top: 40px; */
+
+  /* background-color: hsla(0, 0%, 98%, 0.9); */
+  /* background-color: hsla(0, 0%, 20%, 0.9); */
+  /* border: solid 20px white; */
+  /* border-radius: 7%; */
+}
+
+
+
+#participants-container {
+  /* overflow-y: scroll; */
+  /* height: 65%; */
+  width: 550px;
   margin: auto;
+  /* background-color: black; */
+  /* display: inline-block; */
 }
 
-#container .todo {
+.participant {
   font-size: 20px;
   padding: 1.5% 1.5% 2% 1.5%;
-
   background-color: white;
-  border: solid 3px hsla(0, 0%, 100%, 1.0);
-  border-radius: 10px;
-  margin: 2% 10%;
+  border-radius: var(--round-corner);
+  margin: 1.5%;
+  margin-bottom: 3%;
+  /* margin-right: 100px; */
+  color: var(--red);
+  display: inline-block;
+  width: 80%;
+
+
+  /*height: 40px;*/
+}
+/* .name-and-button {
+  background-color: purple;
+} */
+
+
+#form-container {
+  width: 550px;
+  margin: auto;
+  /* background-color: black; */
 }
 
-#new-todo {
-  width: 80%;
-  margin: auto;
+
+
+#new-participant-form {
+  margin: 3% 3%;
+  margin-right: 9px;
+  width: 83%;
+
+
+  /* padding: 2%; */
+  /* padding: 0px;
+  top:0px; */
+  border-radius: var(--round-corner);
+  background-color: white;
+
+  display: inline-block;
+
 }
-#new-todo-form {
-  margin: 3% 10%;
-  padding: 2%;
-  border: solid 5px hsla(0, 0%, 100%, 1.0);
-  border-radius: 10px;
+input {
+  color: var(--green);
 }
-#container #new-todo #newTitle {
+#participant-input {
+    width: 85%;
+    height: 28px;
+    font-size: 20px;
+    border: none;
+    position: relative;
+    /* background-color: orange; */
+    /* padding: 0.3%; */
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+form {
+  position: inline-block;
+}
+
+button {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: var(--round-corner);
+  font-size: 15px;
+  text-align: center;
+  border: none;
+  color: white;
+
+  display: inline-block;
+
+}
+.delete {
+  background-color: var(--red);
+  margin-top: 8px;
+  /* float: right; */
+}
+
+
+
+
+
+
+
+/* #container #new-todo #newTitle {
   width: 85%;
   font-size: 20px;
   border: none;
   background-color: inherit;
 }
 /* so form input doesn't glow with outline around it */
-#container #new-todo #newTitle:focus {
+/* #container #new-todo #newTitle:focus {
   outline: none;
-}
-
-@media (max-width: 800px) {
+} */
+/* @media (max-width: 800px) {
   #container {
     width: 80%;
   }
   .stripes {
     margin-top: 20%;
   }
+} */
+
+
+
+
+#submit {
+  background-color: var(--green);
+  margin-right: 5px;
+}
+#play {
+  background-color: var(--dark-blue);
+
+  font-size: 2.2em;
+  height: 70px;
+  width: 170px;
+  /* padding: 10px; */
+  position: relative;
+  display: inline-block;
+
+  margin-top: 20px;
 }
 
-button {
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  border: solid 2px hsl(0, 0%, 90%);
-  border-radius: 50%;
-  background-color: white;
-  color: hsl(0, 0%, 80%);
-  font-size: 15px;
-  text-align: center;
-  padding-top: 2px;
-}
-#container .todo .check {
-  width: 36px;
-  height: 35px;
-  float: left;
-  margin-right: 10px;
-  color: white;
-  font-size: 20px;
-}
-#container .todo .delete {
-  margin-top: 2px;
-  float: right;
-}
-#container #new-todo #new-submit {
+
+
+/* #new-participant-form {
   float: right;
   background-color: inherit;
-  /* position: relative; */
-  /* top: 5px; */
-}
+  position: absolute;
+  top: 500px;
+ } */
 
-.todo p {
-  padding-top: 3px;
-  padding-left: 3px;
-}
-button, .todo p {
+.participant p {
   display: inline-block;
   margin: 0px;
   max-width: 80%;
-}
-
-
-.completed p {
-  text-decoration: line-through;
-  color: hsl(0, 0%, 50%);
-}
-.completed .check{
-  background-color: hsl(0, 0%, 50%);
-  border-color: hsl(0, 0%, 50%);
 }
