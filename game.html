@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Heebo:300,500" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet"/>
+    <link href="game.css" type="text/css" rel="stylesheet"/>
   </head>
   <body>
 
@@ -12,36 +13,53 @@
       <img id="Secret-Santa" src="SecretSanta.png" alt="Secret Santa">
     </div>
 
-    <section id="container">
+    <div id="header-buttons-container">
+      <div class="header-buttons" id="edit-list" onclick="edit()">
+        Edit Participants List
+      </div>
+      <div class="header-buttons" id="generate-new" onclick="generateNewSolution()">
+        Generate New Solution
+      </div>
+    </div>
 
-      <div id="participants-container">
-        <!-- example participant html -->
-        <!-- <div class="name-and-button">
-          <article class="participant">
-            <p>test1</p>
-          </article>
-          <button class="delete" onclick="deleteParticipant()">-</button>
+    <div id="container">
+
+      <section id="buttons-container">
+        <button class="button" id="search-by-santa" onclick="searchBySanta(this)">Search by Santa</button>
+        <button class="button" id="search-by-human" onclick="searchByHuman(this)">Search by Human</button>
+      </section>
+
+      <section id="lookup-container">
+        <p class="details" id="for">Human for </p>
+        <!-- <div class="dropdown" id="dropdown">
+          <button class="dropbtn" id="dropbtn" onmouseout="fillDropdown()" onmouseout="unfillDropdown()">Human</button>
+          <div class="dropdown-content" id="dropdown-content">
+          </div>
         </div> -->
 
-      </div>
-
-      <div id="form-container">
-        <div class="name-and-button">
-          <form id="new-participant-form">
-            <input id="participant-input" type="text" name="name" placeholder="Add Participants">
-          </form>
-
-          <button id="submit" onclick="submit()">+</button>
+        <!-- <div class="dropdown" id="dropdown">
+          <select class="dropdown-content" id="dropdown-content" onclick="fillDropdown()">Hey</select>
+            <option value="volvo">Participant's name</option>
+        </div> -->
+        <div class="wrapper" id="wrapper">
+          <select class="Santas" id="menu" onchange="fill()">
+            <!-- <option value="Faith">Faith</option>
+            <option value="Emily">Emily</option>
+            <option value="Kenzie">Kenzie</option>
+            <option value="Blub">Blub</option> -->
+          </select>
         </div>
-      </div>
+
+        <p class="details" id="is">is:</p>
+        <div id="chosen-one">Hannah</div>
+      </section>
 
 
         <!-- <form id="new-todo-form">
           <input id="newTitle" type="text" placeholder="New ToDo..." onclick="appendParticipant()">
           <button id="new-submit"><i class="fas fa-plus"></i></button>
         </form> -->
-      <button id="play" onclick="play()">Play!</button>
-    </section>
+    </div>
 
 
 
