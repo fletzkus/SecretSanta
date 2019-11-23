@@ -1,4 +1,4 @@
-// var participants = ["Faith", "Blub", "Ilana"];
+//var participants = ["Faith", "Blub", "Ilana"];
  var participants = [];
  // var santaToHuman = new Map();
  // var humanToSanta = new Map();
@@ -9,6 +9,9 @@
      participants.forEach(p => {
          update(p);
      });
+   }
+   else {
+     participants = [];
    }
    console.log(participants);
  };
@@ -65,7 +68,9 @@ function appendParticipant() {
 function submit() {
   var form = document.getElementById("new-participant-form");
   var p = form.elements[0].value;
+  // console.log(p);
   if (p !== "") {
+    // console.log("here: " + p);
     participants.push(p);
     update(p);
     console.log(participants);
@@ -78,10 +83,9 @@ document.getElementById("new-participant-form").addEventListener("submit", funct
 });
 
 function play() {
-  generateNewSolution();
+  // generateNewSolution();
   console.log("play clicked!");
-  console.log(santaToHuman);
-  console.log("Stringify");
+  // console.log(santaToHuman);
   console.log(JSON.stringify(participants));
   localStorage.setItem("participants", JSON.stringify(participants));
   // localStorage.setItem("santaToHuman", santaToHuman);
