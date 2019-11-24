@@ -1,14 +1,50 @@
 :root {
-  --dark-blue: #5997C9;
-  --light-blue: #BDD5E9;
+  --blue: #5997C9;
+  --light-blue: #c5dbec;
   --red: #E34424;
+  --light-red: #e96c53;
   --green: #65C56C;
+  --light-green: #89d28e;
   --round-corner: 5px;
 }
 
 body {
-  background-color: var(--light-blue);
+  background-color: var(--blue);
   width: 100%;
   text-align: center;
-  font-family: "Arial", sans-serif;
+  font-family: 'Nunito', sans-serif;
+  color: white;
+}
+
+#footer {
+  color: var(--light-blue);
+  font-size: 15px;
+  margin: auto;
+  position: absolute;
+  height: 50px;
+  left: 0px;
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.05em;
+  padding-left: 20px;
+  font-family: monospace;
+  position: absolute;
+  bottom: 0px;
+}
+#footer strong {
+  color: white;
+}
+#icons {
+  display: inline;
+  margin-top: 10px;
+}
+i {
+  color: var(--light-blue);
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+i:hover {
+  color: white;
+  transition: 0.2s;
 }

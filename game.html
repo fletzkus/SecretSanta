@@ -3,10 +3,10 @@
   <head>
     <title>Secret Santa</title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Heebo:300,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet"/>
     <link href="game.css" type="text/css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/75dcdedcfd.js" crossorigin="anonymous"></script>
   </head>
   <body>
 
@@ -14,54 +14,54 @@
       <img id="Secret-Santa" src="SecretSanta.png" alt="Secret Santa">
     </div>
 
-    <div id="header-buttons-container">
-      <div class="header-buttons" id="edit-list" onclick="edit()">
+    <div id="buttons-container">
+      <div class="header-button views" id="search-by-santa" onmouseover="hoverSanta()" onmouseout="unhoverSanta()" onclick="searchBySanta()">
+        Search by Santa
+      </div>
+      <div class="header-button views" id="search-by-human" onmouseover="hoverHuman()" onmouseout="unhoverHuman()" onclick="searchByHuman()">
+        Search by Human
+      </div>
+      <div class="header-button actions" id="edit-list" onclick="edit()">
         Edit Participants List
       </div>
-      <div class="header-buttons" id="generate-new" onclick="generateNewSolution()">
+      <div class="header-button actions" id="generate-new" onclick="generateNewSolution()">
         Generate New Solution
       </div>
     </div>
 
     <div id="container">
-
-      <section id="buttons-container">
-        <button class="button" id="search-by-santa" onclick="searchBySanta()">Search by Santa</button>
-        <button class="button" id="search-by-human" onclick="searchByHuman()">Search by Human</button>
-      </section>
-
       <section id="lookup-container">
         <p class="details" id="for">Human for </p>
-        <!-- <div class="dropdown" id="dropdown">
-          <button class="dropbtn" id="dropbtn" onmouseout="fillDropdown()" onmouseout="unfillDropdown()">Human</button>
-          <div class="dropdown-content" id="dropdown-content">
-          </div>
-        </div> -->
 
-        <!-- <div class="dropdown" id="dropdown">
-          <select class="dropdown-content" id="dropdown-content" onclick="fillDropdown()">Hey</select>
-            <option value="volvo">Participant's name</option>
-        </div> -->
         <div class="wrapper" id="wrapper">
           <select class="Santas" id="menu" onchange="fill()">
-            <!-- <option value="Faith">Faith</option>
-            <option value="Emily">Emily</option>
-            <option value="Kenzie">Kenzie</option>
-            <option value="Blub">Blub</option> -->
+            <!-- <option value="Example">Name</option> -->
           </select>
         </div>
 
         <p class="details" id="is">is:</p>
-        <div id="chosen-one">Human</div>
+        <!-- Got the gist of how to do a slide reveal from:
+        https://codepen.io/renatocontaifer/pen/xfAHG  -->
+        <div id="chosen-one" class="box-slide">
+          <div class="reveal-content" id="reveal-content">Human</div>
+          <div class="reveal-top">
+            <div class="reveal-content caption" id="caption">Hover to Reveal Santa</div>
+          </div>
+          <!-- Human -->
+        </div>
+
       </section>
 
-
-        <!-- <form id="new-todo-form">
-          <input id="newTitle" type="text" placeholder="New ToDo..." onclick="appendParticipant()">
-          <button id="new-submit"><i class="fas fa-plus"></i></button>
-        </form> -->
     </div>
 
+    <div id="footer">
+      <p>Designed and Build by <strong>Faith Letzkus</strong></p>
+      <div id="icons">
+        <a href="https://www.linkedin.com/in/faith-letzkus/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/faithletzkus/SecretSanta/blob/master/README.md"><i class="fab fa-github"></i></a>
+        <a href=mailto:fletzkus@wustl.edu><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
 
 
     <script src="game.js"></script>

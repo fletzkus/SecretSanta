@@ -5,7 +5,7 @@ var santa = "Santa";
 var santaToHuman = new Map();
 var humanToSanta = new Map();
 
-var darkBlue = "#5997C9";
+var blue = "#5997C9";
 var lightBlue = "#BDD5E9";
 var red = "#E34424";
 var green = "#65C56C";
@@ -37,21 +37,21 @@ const init = function(e) {
     participants = [];
   }
   //document.getElementById("wrapper").appendChild(menu);
-  console.log(participants);
 };
 
 document.addEventListener("DOMContentLoaded", function() {
   init();
   generateNewSolution();
+  document.getElementById("reveal-content").innerHTML = santaToHuman.get(participants[0]);
+  // console.log("undefines? : " + document.getElementById("reveal-content").innerHTML );
+  // console.log(santaToHuman.get(participants[0]));
 });
 
 
-
-
 function generateSantaSolution() {
-  santaToHuman.set("emily", "justin");
-  console.log(santaToHuman.has("emily"));
-  console.log(santaToHuman.has("justin"));
+  // santaToHuman.set("emily", "justin");
+  // console.log(santaToHuman.has("emily"));
+  // console.log(santaToHuman.has("justin"));
     participants.forEach(s => {
         var h = "";
         let santaIndex = participants.indexOf(s);
@@ -89,6 +89,7 @@ function generateNewSolution() {
   santaToHuman.clear();
   humanToSanta.clear();
   generateSantaSolution();
+  fill();
 };
 //
 // function getMySanta(human) {
@@ -108,55 +109,82 @@ function generateNewSolution() {
 //    menu.addEventListener("onclick", fill());
 // };
 
+
+
 function fill() {
-  if (searchBySanta) {
+  if (isSearchingBySanta) {
     human = santaToHuman.get(document.getElementById("menu").value);
-    document.getElementById("chosen-one").innerHTML = human;
+    document.getElementById("reveal-content").innerHTML = human;
   }
-  if (searchByHuman) {
+  if (isSearchingByHuman) {
     santa = humanToSanta.get(document.getElementById("menu").value);
-    document.getElementById("chosen-one").innerHTML = santa;
+    document.getElementById("reveal-content").innerHTML = santa;
   }
 };
 
 function searchBySanta() {
   isSearchingBySanta = true;
+  isSearchingByHuman = false;
   console.log("searchBySanta");
   var btn = document.getElementById("search-by-santa");
   btn.style.backgroundColor = red;
-  btn.style.color = "white";
-  btn.style.width = "76%";
   var otherBtn = document.getElementById("search-by-human");
   otherBtn.style.transition = "0.3s";
-  otherBtn.style.backgroundColor = "white";
-  otherBtn.style.color = darkBlue;
-  var chosenOne = document.getElementById("chosen-one");
+  otherBtn.style.backgroundColor = "transparent";
+  var chosenOne = document.getElementById("reveal-content");
   chosenOne.style.backgroundColor = green;
-  chosenOne.style.transition = "0.3s";
-  otherBtn.style.width = "68%";
+  document.getElementById("caption").innerHTML = "Hover to Reveal Human";
+  document.getElementById("caption").style.color = blue;
   document.getElementById("for").innerHTML = "Human for ";
-  document.getElementById("chosen-one").innerHTML = "Human";
+  fill();
 };
 
+// function fillInCorrectValue() {
+//
+// }
 
+
+
+function hoverSanta() {
+  var otherBtn = document.getElementById("search-by-santa");
+  otherBtn.style.transition = "0.3s";
+  otherBtn.style.backgroundColor = red;
+};
+function unhoverSanta() {
+  if (!isSearchingBySanta) {
+    var otherBtn = document.getElementById("search-by-santa");
+    otherBtn.style.transition = "0.3s";
+    otherBtn.style.backgroundColor = "transparent";
+  }
+};
+function hoverHuman() {
+  var otherBtn = document.getElementById("search-by-human");
+  otherBtn.style.transition = "0.3s";
+  otherBtn.style.backgroundColor = green;
+};
+function unhoverHuman() {
+  if( !isSearchingByHuman) {
+    var otherBtn = document.getElementById("search-by-human");
+    otherBtn.style.transition = "0.3s";
+    otherBtn.style.backgroundColor = "transparent";
+  }
+};
 function searchByHuman() {
   isSearchingByHuman = true;
+  isSearchingBySanta = false;
   console.log("searchByHuman");
   var btn = document.getElementById("search-by-human");
   btn.style.backgroundColor = green;
-  btn.style.color = "white";
-  btn.style.width = "76%";
   var otherBtn = document.getElementById("search-by-santa");
   otherBtn.style.transition = "0.3s";
-  otherBtn.style.backgroundColor = "white";
-  otherBtn.style.color = darkBlue;
-  var chosenOne = document.getElementById("chosen-one");
+  otherBtn.style.backgroundColor = "transparent";
+  var chosenOne = document.getElementById("reveal-content");
   chosenOne.style.backgroundColor = red;
-  chosenOne.style.transition = "0.3s";
-  otherBtn.style.width = "68%";
+  document.getElementById("caption").innerHTML = "Hover to Reveal Santa";
   document.getElementById("for").innerHTML = "Santa for ";
-  document.getElementById("chosen-one").innerHTML = "Santa";
-};
+  document.getElementById("caption").style.color = blue;
+  fill();
+ };
 
 
 function edit() {

@@ -2,204 +2,116 @@
   margin-top: 40px;
   width: 680px;
 }
-
 #header {
-  background-color: var(--dark-blue);
   color: white;
-  position: absolute;
-  left: 0px;
-  top: 0px;
   height: 250px;
   width: 100%;
-  letter-spacing: 0.12em;
 }
-
-h1 {
-  font-size: 50px;
-  /* margin: 0px;
-  margin-top: 15px; */
-}
-
 #container {
-  background-color: var(--light-blue);
-  position: absolute;
-  top: 300px;
-  left: 0px;
-
-  /* width: 58%;
-  height: 580px; */
   width: 100%;
-/*
-  margin-left: auto;
-  margin-right: auto; */
-  /* margin-top: 40px; */
-
-  /* background-color: hsla(0, 0%, 98%, 0.9); */
-  /* background-color: hsla(0, 0%, 20%, 0.9); */
-  /* border: solid 20px white; */
-  /* border-radius: 7%; */
 }
+.name-and-button {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+  border-radius: var(--round-corner);
+  border: none;
+  font-size: 14px;
+  text-align: center;
 
+  color: white;
+  display: inline-block;
+  margin-top: 3%;
+  margin-right: 9px;
+}
 
 
 #participants-container {
-  /* overflow-y: scroll; */
-  /* height: 65%; */
-  width: 550px;
+  width: 500px;
   margin: auto;
-  /* background-color: black; */
-  /* display: inline-block; */
 }
-
 .participant {
   font-size: 20px;
-  padding: 1.5% 1.5% 2% 1.5%;
+  padding: 2.8% 1.5% 0.7% 1.5%;
   background-color: white;
   border-radius: var(--round-corner);
   margin: 1.5%;
+  margin-left: 15px;
   margin-bottom: 3%;
-  /* margin-right: 100px; */
   color: var(--red);
   display: inline-block;
   text-align: left;
   width: 80%;
+  height: 35px;
 }
-
 .participant p {
   padding-left: 27px;
-}
-/* .name-and-button {
-  background-color: purple;
-} */
-
-
-#form-container {
-  width: 550px;
-  margin: auto;
-  /* background-color: black; */
-}
-
-
-
-#new-participant-form {
-  margin: 3% 3%;
-  margin-right: 9px;
-  width: 83%;
-
-
-  /* padding: 2%; */
-  /* padding: 0px;
-  top:0px; */
-  border-radius: var(--round-corner);
-  background-color: white;
-
-  display: inline-block;
-
-}
-input {
-  color: var(--green);
-}
-#participant-input {
-    width: 85%;
-    height: 28px;
-    font-size: 20px;
-    border: none;
-    position: relative;
-    /* background-color: orange; */
-    /* padding: 0.3%; */
-    padding-top: 9px;
-    padding-bottom: 9px;
-}
-#participant-input::placeholder {
-  color: var(--green);
-}
-form {
-  position: inline-block;
-}
-
-button {
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  border-radius: var(--round-corner);
-  font-size: 15px;
-  text-align: center;
-  border: none;
-  color: white;
-
-  display: inline-block;
-
+  margin: 0px;
+  overflow-x: hidden;
+  max-width: 85%;
 }
 .delete {
   background-color: var(--red);
   margin-top: 8px;
-  /* float: right; */
+}
+.delete:hover {
+  transition: 0.3s;
+  background-color: var(--light-red);
 }
 
 
 
-
-
-
-
-/* #container #new-todo #newTitle {
+#form-container {
+  width: 500px;
+  margin: auto;
+}
+#new-participant-form {
+  margin: 3% 3%;
+  margin-right: 5px;
+  width: 83%;
+  border-radius: var(--round-corner);
+  background-color: white;
+}
+#participant-input {
+  color: var(--green);
   width: 85%;
+  height: 35px;
   font-size: 20px;
   border: none;
-  background-color: inherit;
+  position: relative;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
-/* so form input doesn't glow with outline around it */
-/* #container #new-todo #newTitle:focus {
-  outline: none;
-} */
-/* @media (max-width: 800px) {
-  #container {
-    width: 80%;
-  }
-  .stripes {
-    margin-top: 20%;
-  }
-} */
-
-
-
-
+#participant-input::placeholder {
+  color: var(--green);
+}
 #submit {
   background-color: var(--green);
-  margin-right: 5px;
+  margin-top: 3%;
+  margin-right: 9px;
+  margin-left: 3px;
+  font-size: 20px;
 }
-#play {
-  background-color: var(--dark-blue);
 
+#play {
+  cursor: pointer;
+  background-color: var(--green);
+  color: white;
   font-size: 2.2em;
-  /* height: px; */
-  width: 215px;
-  /* padding: 10px; */
+  border-radius: 10px;
   position: relative;
   display: inline-block;
-  color: white;
-  border-radius: 10px;
+  width: 215px;
   margin-top: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   padding-top: 26px;
   padding-bottom: 23px;
-
 }
-#play:hover {
+#play:hover, #submit:hover {
   transition: 0.3s;
-  background-color: var(--green);
-}
-
-
-/* #new-participant-form {
-  float: right;
-  background-color: inherit;
-  position: absolute;
-  top: 500px;
- } */
-
-.participant p {
-  display: inline-block;
-  margin: 0px;
-  max-width: 80%;
+  background-color: var(--light-green);
 }
