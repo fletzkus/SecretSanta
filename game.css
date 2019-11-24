@@ -142,3 +142,7 @@ select::-ms-expand {
     text-indent: 1px;
     text-overflow: '';
 } */
+#footer {
+  position: absolute;
+  bottom: 0px;
+}

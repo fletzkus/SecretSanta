@@ -29,8 +29,8 @@ body {
   letter-spacing: 0.05em;
   padding-left: 20px;
   font-family: monospace;
-  position: absolute;
-  bottom: 0px;
+  /* position: absolute;
+  bottom: 0px; */
 }
 #footer strong {
   color: white;
