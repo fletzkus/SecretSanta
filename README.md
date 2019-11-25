@@ -1,8 +1,8 @@
 # SecretSanta
 
-00000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000
 About the program
-00000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000
 
 This program allows the users to create a list of participants, generates Santa-Human pairs for each participant, and lets the users see the outcomes secretively. A Santa is the person giving the gift. A Human is the person receiving the gift. Each participant is both a Santa and a Human.
 
