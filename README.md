@@ -64,9 +64,10 @@ An additional update might be to allow the user to specify if any Santas and Hum
 
 Generate new solution, when clicked, runs the solution generating code. This means there is a chance that it produces the exact same solution as before. This was purposeful as it makes each solution more truly random.
 
+For this iteration of Secret Santa, I chose not to use an api but instead store everything to localStorage. In the future, I might do an iteration with an api where a user can log in and access their past Secret Santa sets. This would allow for more functionality, such as going back and seeing who you Human is if you forgot.
 
 
 
 -----Test Cases-----
 
-I tested groups of sizes 4, 5, and 6, and tested all user inputs specified by the usage methods.
+I tested groups of many sizes between 3 and 8, that solutions were generating properly. I tested that the participants list was getting saved properly to localStorage, all that the buttons in game.html were working properly. I tested that participants list with duplicates or with less than 3 did not allow the user to progress to the game play screen.
