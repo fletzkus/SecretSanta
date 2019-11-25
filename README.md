@@ -5,7 +5,8 @@
 This program allows the users to create a list of participants, generates Santa-Human pairs for each participant, and lets the users see the outcomes secretively. A Santa is the person giving the gift. A Human is the person receiving the gift. Each participant is both a Santa and a Human.
 
 
-
+-----Purpose-----
+This is a personal project inspired by one of my suitmate's loves for Secret Santa. She wanted everyone in my suit to play Secret Santa, and I thought that It would be a fun project to code! I did the first iteration in java using the console for user input (this program is also posted on my github). Then, I thought it would be cool to have a more visual UI, and created this website usign html, css, and javascript! It was a lot of fun, and my suitmate really loved using it :D We are now going to make Secret Santa a suite tradition.
 
 
 -----My Solution-----
