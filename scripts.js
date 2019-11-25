@@ -1,5 +1,10 @@
 var participants = [];
 
+/*
+ *This is the initial function called when the screen loads.
+ *If there is a participants array stored in the browser,
+ *it gets this array and calls update to populate the sceen with the array's contents
+*/
 const init = function(e) {
   participants = JSON.parse(localStorage.getItem("participants"));
   if (participants) {
@@ -12,10 +17,17 @@ const init = function(e) {
   }
 };
 
+/*
+ *When the screen loads, this calls init()
+*/
 document.addEventListener("DOMContentLoaded", function() {
   init();
 });
 
+/*
+ *Creates the HTML object for a participant and adds it to the screen
+ *Param: p is the participant for which the HTML object is created
+*/
 function update(p) {
   //create nameAndButton div
   var nameAndButton = document.createElement("div");
@@ -48,38 +60,52 @@ function update(p) {
 
 };
 
+/*
+ *When the delete button next to a participant is clicked,
+ *this is called to delete that participant from the screen and from the array
+ *and pushes the new participants array to localStorage
+ *Param: event is the click on the delete button
+*/
 function deleteParticipant(event) {
   event.target.parentNode.remove();
   let nameString = event.target.parentNode.firstChild.firstChild.innerHTML;
   let index = participants.indexOf(nameString);
   participants.splice(index, 1);
-  console.log(participants);
+  localStorage.setItem("participants", JSON.stringify(participants));
 };
 
-function appendParticipant() {
-  participants.push(newTitle.text);
-  console.log(newTitle.text);
-};
-
+/*
+ *Runs whenever the "+" button is clicked or whenever user hits enter in the form
+ *This adds the participant to the participant array and to the screen
+ *and pushes the new participants array to localStorage
+*/
 function submit() {
   var form = document.getElementById("new-participant-form");
   var p = form.elements[0].value;
   if (p !== "") {
     participants.push(p);
     update(p);
-    console.log(participants);
+    localStorage.setItem("participants", JSON.stringify(participants));
   }
 };
 
+/*
+ *This runs whenever someone hits enter in the form
+ *Calls sumbit() to add the participant to the participant array and to the screen
+ *and pushes the new participants array to localStorage
+*/
 document.getElementById("new-participant-form").addEventListener("submit", function(event) {
   event.preventDefault();
   submit();
 });
 
+/*
+ *When play is clicked,
+ *The participants list is checked for duplicate names and
+ *checked to make sure there are at least 3 participants.
+ *If so, the game screen is pushed
+*/
 function play() {
-  console.log("play clicked!");
-  console.log(JSON.stringify(participants));
-  localStorage.setItem("participants", JSON.stringify(participants));
   if (isDupicateName()) {
     alert("There are duplicate names. Please make all participant's names unique.");
   }
@@ -92,6 +118,10 @@ function play() {
 
 };
 
+/*
+ *Checks to make sure that there are no duplicate names in the participants list
+ *If there are, return true, else return false
+*/
 function isDupicateName() {
   for (var i = 0; i < participants.length; i++) {
     for (var j = 0; j < participants.length; j++) {

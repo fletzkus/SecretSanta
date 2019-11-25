@@ -1,3 +1,4 @@
+/* header */
 #Secret-Santa {
   margin-top: 40px;
   width: 680px;
@@ -7,6 +8,8 @@
   height: 250px;
   width: 100%;
 }
+
+/* general stylings */
 #container {
   width: 100%;
 }
@@ -29,7 +32,7 @@ button {
   margin-right: 9px;
 }
 
-
+/* participants list */
 #participants-container {
   width: 500px;
   margin: auto;
@@ -63,8 +66,7 @@ button {
   background-color: var(--light-red);
 }
 
-
-
+/* form */
 #form-container {
   width: 500px;
   margin: auto;
@@ -97,6 +99,7 @@ button {
   font-size: 20px;
 }
 
+/* play button */
 #play {
   cursor: pointer;
   background-color: var(--green);

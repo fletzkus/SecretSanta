@@ -1,11 +1,8 @@
-body {
-  text-align: center;
-}
+/* header */
 #Secret-Santa {
   margin-top: 20px;
   width: 400px;
 }
-
 #header {
   margin: auto;
   display: inline-block;
@@ -15,9 +12,10 @@ body {
   width: 400px;
   text-align: left;
 }
+
+/* buttons bar */
 #buttons-container {
   font-size: 22px;
-  /* position: absolute; */
   margin-left: 2.5%;
   width: 95%;
   display: flex;
@@ -39,8 +37,9 @@ body {
 #search-by-santa {
   background-color: var(--red);
 }
+
+/* main body container */
 #container {
-  /* position: absolute; */
   width: 100%;
   margin: auto;
   margin-top: 100px;
@@ -50,10 +49,38 @@ body {
   justify-content: center;
   text-align: center;
 }
+#container p {
+  font-size: 27px;
+}
+#for {
+  margin-left: 55px;
+  margin-right: 25px;
+}
 #is {
+  margin-left: 25px;
   margin-right: 20px;
 }
 
+/* dropdown */
+#wrapper {
+  margin-top: 17px;
+}
+select {
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-align-last: center;
+  font-size: 25px;
+  border: none;
+  height: 50px;
+  color: var(--blue);
+}
+option {
+  text-align: center;
+}
+
+/* slide reveal */
 /* Got the gist of how to do a slide reveal from:
 https://codepen.io/renatocontaifer/pen/xfAHG */
 .box-slide {
@@ -82,67 +109,8 @@ https://codepen.io/renatocontaifer/pen/xfAHG */
   left: 0;
   transition: all 0.6s ease;
   border-radius: var(--round-corner);
-  /* display: inline-block; */
 }
 .caption {
   background-color: white;
   color: var(--blue);
-  /* background: #222;
-  color: #fff; */
-}
-
-
-#wrapper {
-  display: inline-block;
-  margin-top: 17px;
-}
-.details {
-  font-size: 27px;
-}
-#for {
-  margin-left: 55px;
-  margin-right: 25px;
-}
-#is {
-    margin-left: 25px;
-}
-select {
-  width: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  text-align-last: center;
-  font-size: 25px;
-  border: none;
-  height: 50px;
-  /* color: var(--red); */
-  color: var(--blue);
-
-  /* -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; */
-}
-option {
-  text-align: center;
-  /* text-align-last: center; */
-}
-
-select::-ms-expand {
-    display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
-}
-/* select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: url(http://www.stackoverflow.com/favicon.ico) 95% / 20% no-repeat #fff;
-} */
-/* select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
-} */
-#footer {
-  position: absolute;
-  bottom: 0px;
 }

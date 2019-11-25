@@ -5,14 +5,17 @@ var santa = "Santa";
 var santaToHuman = new Map();
 var humanToSanta = new Map();
 
-var blue = "#5997C9";
-var lightBlue = "#BDD5E9";
+var blue = "#5A96C9";
 var red = "#E34424";
 var green = "#65C56C";
 
 var isSearchingBySanta = true;
 var isSearchingByHuman = false;
 
+/*
+ *This funciton inititalizes the dropdown feature (HTML select element)
+ *with all the names in the participants list
+*/
 const init = function(e) {
   participants = JSON.parse(localStorage.getItem("participants"));
   var menu = document.getElementById("menu");
@@ -29,12 +32,31 @@ const init = function(e) {
   }
 };
 
+/*
+ *When the screen loads,
+    *init() is called to set up teh drop down (HTML Select element)
+    *generate new solution is called to generate the Santa Solution
+    *And the correct name is set under hover
+*/
 document.addEventListener("DOMContentLoaded", function() {
   init();
   generateNewSolution();
   document.getElementById("reveal-content").innerHTML = santaToHuman.get(participants[0]);
 });
 
+/*
+ * Randomly generate a santa-human pairs for the participants given.
+ * Save the pairs to the santaToHuman map and humanToSanta map.
+ *
+ * Note: My solution allows for solutions such as
+ * Participants = [a, b, c, d]
+ * SantaToHuman = {a=b, b=a, c=d, d=c}
+ * This solution is comprised of two subgroups where the first person is the Santa of the second and the second is the Santa first.
+ * I allow this to happen because it closer to a truly random solution.
+ * However, it causes a problem if there are an odd number because the last person cannot have themself.
+ * I solve for this with the remainingHumans list,
+ * generating a new solution over again if the last humanRemaining is also the last Santa without a human.
+*/
 function generateSantaSolution() {
     var remainingHumans = [];
     remainingHumans = remainingHumans.concat(participants);
@@ -59,7 +81,10 @@ function generateSantaSolution() {
     });
 };
 
-
+/*
+ * Erase the existing solution by clearing the santaToHuman and humanToSanta maps.
+ * Then, generate a new santa solution by calling generateSantaSolution().
+*/
 function generateNewSolution() {
   santaToHuman.clear();
   humanToSanta.clear();
@@ -67,6 +92,10 @@ function generateNewSolution() {
   fill();
 };
 
+/*
+ *For whatever name is selected by the dropdown,
+ *puts the corresponding name beneath the hover panel
+*/
 function fill() {
   if (isSearchingBySanta) {
     human = santaToHuman.get(document.getElementById("menu").value);
@@ -78,6 +107,10 @@ function fill() {
   }
 };
 
+/*
+ *When searchBySanta is selected, this does all of the html and css changes on the screen
+ additionally, it calls fill()
+*/
 function searchBySanta() {
   isSearchingBySanta = true;
   isSearchingByHuman = false;
@@ -95,6 +128,10 @@ function searchBySanta() {
   fill();
 };
 
+/*
+ *When searchByHuman is selected, this does all of the html and css changes on the screen
+ additionally, it calls fill()
+*/
 function searchByHuman() {
   isSearchingByHuman = true;
   isSearchingBySanta = false;
@@ -112,8 +149,10 @@ function searchByHuman() {
   fill();
  };
 
-//backgroundColor when hovering got messed up after I overrode the main backgroundColor,
-//solution was to do it all in javascript instead of css
+/*
+ *backgroundColor when hovering got messed up after I overrode the main backgroundColor,
+ *solution was to do it all in javascript instead of css
+*/
 function hoverSanta() {
   var otherBtn = document.getElementById("search-by-santa");
   otherBtn.style.transition = "0.3s";
@@ -139,6 +178,9 @@ function unhoverHuman() {
   }
 };
 
+/*
+If user clicks Edit Participants List, this is called, and the user is taken back to the home page
+*/
 function edit() {
   localStorage.setItem("participants", JSON.stringify(participants));
   window.location.href = "index.html";

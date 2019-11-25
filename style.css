@@ -1,5 +1,6 @@
+/* colors and settings used throughout */
 :root {
-  --blue: #5997C9;
+  --blue: #5A96C9;
   --light-blue: #c5dbec;
   --red: #E34424;
   --light-red: #e96c53;
@@ -16,6 +17,7 @@ body {
   color: white;
 }
 
+/* footer styling for both pages */
 #footer {
   color: var(--light-blue);
   font-size: 15px;
