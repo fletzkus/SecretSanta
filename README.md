@@ -1,17 +1,14 @@
 # SecretSanta
 
-00000000000000000000000000000000
-About the program
-00000000000000000000000000000000
+-----About the program-----
 
 This program allows the users to create a list of participants, generates Santa-Human pairs for each participant, and lets the users see the outcomes secretively. A Santa is the person giving the gift. A Human is the person receiving the gift. Each participant is both a Santa and a Human.
 
 
 
 
-00000000000000000000000000000000000000000000000000000000000000000000000000
-My Solution
-00000000000000000000000000000000000000000000000000000000000000000000000000
+
+-----My Solution-----
 
 My solution to the problem is modeled after the original version of Secret Santa where all participant’s names get put into a hat and everyone then draws from the hat to get their Human.
 However, the old system has an honor system policy; if someone draws themself, they have to speak up so that they can draw again. My solution accounts for this and does not allow a person to have themselves.
@@ -30,9 +27,7 @@ I did not solve it this way because this solution does not allow for subgroups (
 
 
 
-00000000000000000000000000000000000000000000000000000000000000000000000000
-Functionality
-00000000000000000000000000000000000000000000000000000000000000000000000000
+-----Functionality-----
 
 The website has two main parts, the setup where the user builds the participants list and the game play where the user finds out the Santa-Human pairs.
 
@@ -44,9 +39,7 @@ In Game Play, the user can their name and hover to reveal their human, get their
 
 
 
-00000000000000000000000000000000000000000000000000000000000000000000000000
-Problems I ran into
-00000000000000000000000000000000000000000000000000000000000000000000000000
+-----Problems I ran into-----
 
 The hover to reveal feature is intended to maintain secrecy, when discovering who your Human is. However, it is not functional on mobile. As an update to this, I could make it reveal on click instead, to allow it to work on mobile.
 
@@ -60,9 +53,7 @@ At this point, the last remaining Human is also the last remaining Santa without
 
 
 
-00000000000000000000000000000000000000000000000000000000000000000000000000
-Design choices
-00000000000000000000000000000000000000000000000000000000000000000000000000
+-----Design Choices-----
 
 There must be at least 3 people in the participants list to continue on from the setup mode. I considered making this 4, because if there are just three people and each person knows their Human, you know the other person must be your Santa. However, I kept it with 3 as the minimum allowed because, with 3, it is still random whether each of the other two people is your Santa or your Human.
 
@@ -74,8 +65,6 @@ Generate new solution, when clicked, runs the solution generating code. This mea
 
 
 
-00000000000000000000000000000000000000000000000000000000000000000000000000
-Test cases
-00000000000000000000000000000000000000000000000000000000000000000000000000
+-----Test Cases-----
 
 I tested groups of sizes 4, 5, and 6, and tested all user inputs specified by the usage methods.
