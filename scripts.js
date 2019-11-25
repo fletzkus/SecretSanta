@@ -1,24 +1,20 @@
-//var participants = ["Faith", "Blub", "Ilana"];
- var participants = [];
- // var santaToHuman = new Map();
- // var humanToSanta = new Map();
+var participants = [];
 
- const init = function(e) {
-   participants = JSON.parse(localStorage.getItem("participants"));
-   if (participants) {
-     participants.forEach(p => {
-         update(p);
-     });
-   }
-   else {
-     participants = [];
-   }
-   console.log(participants);
- };
+const init = function(e) {
+  participants = JSON.parse(localStorage.getItem("participants"));
+  if (participants) {
+    participants.forEach(p => {
+      update(p);
+    });
+  }
+  else {
+    participants = [];
+  }
+};
 
- document.addEventListener("DOMContentLoaded", function() {
-   init();
- });
+document.addEventListener("DOMContentLoaded", function() {
+  init();
+});
 
 function update(p) {
   //create nameAndButton div
@@ -68,9 +64,7 @@ function appendParticipant() {
 function submit() {
   var form = document.getElementById("new-participant-form");
   var p = form.elements[0].value;
-  // console.log(p);
   if (p !== "") {
-    // console.log("here: " + p);
     participants.push(p);
     update(p);
     console.log(participants);
@@ -83,14 +77,13 @@ document.getElementById("new-participant-form").addEventListener("submit", funct
 });
 
 function play() {
-  // generateNewSolution();
   console.log("play clicked!");
-  // console.log(santaToHuman);
   console.log(JSON.stringify(participants));
   localStorage.setItem("participants", JSON.stringify(participants));
-  // localStorage.setItem("santaToHuman", santaToHuman);
-  // localStorage.setItem("humanToSanta", humanToSanta);
-  if (participants.length > 2) {
+  if (isDupicateName()) {
+    alert("There are duplicate names. Please make all participant's names unique.");
+  }
+  else if (participants.length > 2) {
     window.location.href = "game.html";
   }
   else {
@@ -99,35 +92,13 @@ function play() {
 
 };
 
-// function generateSantaSolution() {
-//     participants.forEach(santa => {
-//         var human = "";
-//         let santaIndex = participants.indexOf(santa);
-//         while (true) {
-//             let randomIndex = parseInt(Math.random() * participants.length);
-//             human = participants[randomIndex];
-//             if (randomIndex !== santaIndex && !santaToHuman.has(human)) {
-//                 break;
-//             }
-//         }
-//         santaToHuman.set(santa, human);
-//         humanToSanta.set(human, santa);
-//     });
-// };
-//
-//
-// function generateNewSolution() {
-//   santaToHuman.clear();
-//   humanToSanta.clear();
-//   generateSantaSolution();
-// };
-//
-// function getMySanta(human) {
-//   console.log("Your human is " + humantToSanta.get(human));
-//   var yourSanta = humantToSanta.get(human);
-// };
-//
-// function getMyHuman(santa) {
-//   console.log("Your human is " + santaToHuman.get(santa));
-//   var yourHuman = santaToHuman.get(santa);
-// };
+function isDupicateName() {
+  for (var i = 0; i < participants.length; i++) {
+    for (var j = 0; j < participants.length; j++) {
+      if (participants[i] == participants[j] && i !== j) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
